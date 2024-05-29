@@ -89,7 +89,7 @@ body {
 
 
             &:not(:last-child) {
-                border-bottom: 1px dashed $primary;
+                border-bottom: 1px dashed rgba($primary, 0.15);
             }
 
             &:hover:not(:has(.no-post)) {
