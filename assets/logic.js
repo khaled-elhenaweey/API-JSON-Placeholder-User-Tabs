@@ -11,11 +11,10 @@ function getAllPosts() {
       for (const user of users) {
         let index = user.id;
         let contentAction = `
-        <button class="btn btn-primary mb-2" onclick="userPosts(${index})">
-        <span> ${user.name}</span>
-        <br>
-        <span> ${user.email}</span>
-        </button>
+        <li  class="" onclick="userPosts(${index})">
+        <h4> ${user.name}</h4>
+        <p> ${user.email}</p>
+        </li>
         `;
         document.querySelector("#actionCard").innerHTML += contentAction;
       }
@@ -39,14 +38,11 @@ function FilterPost(index) {
       let posts = request.response;
       document.querySelector("#postList").innerHTML = "";
       for (const post of posts) {
-        console.log(post.title);
-        console.log(post.body);
         let contentAction = `
-        <li class="list-group-item">
-        <span>${post.userId}</span>
-        <h4>${post.title}</h4>
+        <div class="post">
+        <h2>${post.title}</h2>
         <p>${post.body}</p>
-        </li>
+    </div>
         `;
         document.querySelector("#postList").innerHTML += contentAction;
       }
@@ -58,4 +54,11 @@ function FilterPost(index) {
 getAllPosts();
 function userPosts(index) {
   FilterPost(index);
+  const links = document.querySelectorAll(".user-links li");
+  links.forEach((link) => {
+    // Remove active class from all links
+    links.forEach((l) => l.classList.remove("active"));
+    // Add active class to the clicked link and corresponding post
+    links[index - 1].classList.add("active");
+  });
 }

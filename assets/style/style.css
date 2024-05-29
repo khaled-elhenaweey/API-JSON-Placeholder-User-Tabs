@@ -1,1 +1,116 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+  font-family: "poppins";
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  overflow-y: auto;
+  text-align: left;
+  text-transform: capitalize;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+.container .sidebar {
+  width: 30%;
+  background: #2c3e50;
+  color: #ffffff;
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.container .sidebar .user-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.container .sidebar .user-links li {
+  cursor: pointer;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 5px;
+  background: #354b60;
+  transition: background 0.3s;
+}
+.container .sidebar .user-links li h4 {
+  font-size: 12px;
+  color: inherit;
+  margin: 2px 0;
+  padding: 0;
+}
+.container .sidebar .user-links li p {
+  font-size: 10px;
+  color: inherit;
+  margin: 0;
+}
+.container .sidebar .user-links li:hover {
+  background: #507192;
+}
+.container .sidebar .user-links li.active {
+  background: #1abc9c;
+}
+.container .content {
+  width: 70%;
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+  transition: all 0.3s;
+}
+.container .content .post {
+  color: #2c3e50;
+  padding: 12px;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.container .content .post:not(:last-child) {
+  border-bottom: 1px dashed #2c3e50;
+}
+.container .content .post:hover:not(:has(.no-post)) {
+  background-color: rgba(0, 0, 0, 0.025);
+}
+.container .content .post h2 {
+  font-size: 16px;
+  color: inherit;
+}
+.container .content .post p {
+  font-size: 12px;
+  color: inherit;
+}
+.container .content .post .no-post {
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-top: 40%;
+}
+
+/* scroll bar style*/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
